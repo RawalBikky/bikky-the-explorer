@@ -6,6 +6,8 @@ body {
   background-color: #f4f8fc;
   color: #1e1e2f;
   line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Header */
@@ -185,46 +187,68 @@ footer {
 
 /* Responsive Layout */
 @media (max-width: 768px) {
+  header {
+    position: relative;
+    padding: 0.8rem 0;
+  }
+
   .header-container {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 1rem;
+    gap: 0.3rem;
+    padding: 0.3rem 1rem;
   }
 
   .header-left {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin: 0;
   }
 
   .tagline {
-    font-size: 0.9rem;
-    margin-top: 0.3rem;
+    font-size: 0.75rem;
+    margin: 0;
+    color: #b0d4e8;
   }
 
   .header-center {
-    flex-direction: column;
-    margin-top: 1rem;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
   }
 
   .header-center a {
-    margin: 0.3rem 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
-  .site-logo {
-    max-width: 100px;
-    margin-top: 1rem;
+  .header-right .site-logo {
+    width: 60px;
+    height: auto;
+    margin-top: 0.5rem;
+  }
+
+  .hero {
+    padding: 1.5rem 1rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
   }
 
   .hero h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero p {
-    font-size: 1rem;
-    padding: 0 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
   }
 
-  main, footer {
+  main,
+  footer {
     padding: 1rem;
   }
 
@@ -255,54 +279,3 @@ footer {
     font-size: 1.8rem;
   }
 }
-
-@media (max-width: 768px) {
-  header {
-    position: relative; /* prevent sticky header from blocking scroll */
-  }
-
-  .hero {
-    padding: 2rem 1rem 1rem;
-    min-height: unset;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0;
-  }
-
-  .hero h2 {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
-    line-height: 1.5;
-  }
-
-  .header-container {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .header-left {
-    font-size: 1.6rem;
-  }
-
-  .tagline {
-    font-size: 0.85rem;
-    margin-top: 0;
-  }
-
-  .header-right .site-logo {
-    width: 80px;
-  }
-
-  body {
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-
