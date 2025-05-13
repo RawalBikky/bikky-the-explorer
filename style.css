@@ -1,17 +1,22 @@
 /* Reset & Base */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f4f8fc;
+  color: #1e1e2f;
+  line-height: 1.6;
 }
 
 /* Header */
 header {
-  background: #333;
+  background: #0d1b2a;
   color: #fff;
   padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-container {
@@ -21,22 +26,24 @@ header {
   max-width: 1200px;
   margin: auto;
   padding: 0 1rem;
-  gap: 1rem; /* Adds some space between elements */
+  gap: 1rem;
 }
 
 .header-left {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 800;
   margin: 0;
   text-align: center;
+  color: #61a5c2;
 }
 
 .tagline {
   font-size: 1rem;
   font-style: italic;
   display: block;
-  margin-top: 0.5rem; /* Adds space between the main title and tagline */
-  text-align: center; /* Centers the tagline under the title */
+  margin-top: 0.3rem;
+  text-align: center;
+  color: #c0e0f5;
 }
 
 .header-center {
@@ -45,14 +52,16 @@ header {
 }
 
 .header-center a {
-  color: #fff;
+  color: #f0f0f0;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .header-center a:hover {
-  text-decoration: underline;
+  color: #61a5c2;
+  transform: scale(1.1);
 }
 
 .header-right .site-logo {
@@ -60,24 +69,54 @@ header {
   height: auto;
 }
 
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #003554, #0d1b2a);
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #cce4f2;
+}
+
 /* Main */
 main {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
 .blog-post {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 5px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
   margin-bottom: 2rem;
-  max-width: 100%; /* Ensures no content overflows */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-post:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .blog-post h2 a {
-  color: #333;
+  color: #003554;
   text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .blog-post h2 a:hover {
@@ -86,16 +125,18 @@ main {
 
 .meta {
   font-size: 0.9rem;
-  color: #777;
+  color: #888;
+  margin-bottom: 1rem;
+  font-style: italic;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #333;
-  color: #fff;
-  margin-top: 2rem; /* Adds space above the footer */
+  padding: 1.5rem 1rem;
+  background: #0d1b2a;
+  color: #f0f0f0;
+  font-size: 0.95rem;
 }
 
 /* About Section */
@@ -103,16 +144,19 @@ footer {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: #1e1e2f;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .about-heading {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 2rem;
   font-weight: 800;
   letter-spacing: 1px;
+  color: #003554;
 }
 
 .about-wrapper {
@@ -125,7 +169,7 @@ footer {
 .about-img img {
   width: 300px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
@@ -134,7 +178,7 @@ footer {
 }
 
 .about-text p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
 }
@@ -144,32 +188,40 @@ footer {
   .header-container {
     flex-direction: column;
     text-align: center;
-    gap: 1rem; /* Adds gap between items */
+    gap: 1rem;
   }
 
   .header-left {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .tagline {
     font-size: 0.9rem;
-    margin-top: 0.3rem; /* Reduces space between title and tagline */
+    margin-top: 0.3rem;
   }
 
   .header-center {
-    display: block;
+    flex-direction: column;
     margin-top: 1rem;
   }
 
   .header-center a {
-    display: block;
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
     font-size: 1rem;
   }
 
   .site-logo {
-    max-width: 120px;
+    max-width: 100px;
     margin-top: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
 
   main, footer {
@@ -177,6 +229,7 @@ footer {
   }
 
   .blog-post {
+    padding: 1.2rem;
     margin-bottom: 1.5rem;
   }
 
@@ -190,7 +243,7 @@ footer {
   }
 
   .about-img img {
-    width: 80%; /* Makes image responsive */
+    width: 90%;
     margin-bottom: 1rem;
   }
 
@@ -199,6 +252,7 @@ footer {
   }
 
   .about-heading {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
+
