@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Connect with Bikky The Explorer and share your thoughts or questions through the social page." />
+  <title>Social | Bikky The Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="header-left">Bikky The Explorer</h1>
+      <p class="tagline">"TRAVEL ENTHUSIAST"</p>
+
+      <nav class="header-center">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="social.html">Social</a>
+      </nav>
+
+      <div class="header-right">
+        <img src="images/btelogo.png" alt="Bikky The Explorer Logo" class="site-logo" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Social Section -->
+    <section class="social-container">
+      <div class="social-header">
+        <h2>Drop Your Query</h2>
+        <p>Feel free to ask any questions or share your thoughts with us. Our community is here to help!</p>
+      </div>
+
+      <form id="query-form">
+        <textarea id="query-input" placeholder="Type your query here..." required></textarea>
+        <button type="submit">Submit Query</button>
+      </form>
+
+      <div id="queries-container">
+        <h3>All Queries</h3>
+        <div id="queries-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 "BikkyTheExplorer" | <a href="mailto:explorewithbikky@gmail.com">Contact</a></p>
+  </footer>
+
+  <script src="social.js"></script>
+</body>
+
+</html>
