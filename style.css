@@ -256,3 +256,53 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  header {
+    position: relative; /* prevent sticky header from blocking scroll */
+  }
+
+  .hero {
+    padding: 2rem 1rem 1rem;
+    min-height: unset;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+    line-height: 1.5;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .header-left {
+    font-size: 1.6rem;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+    margin-top: 0;
+  }
+
+  .header-right .site-logo {
+    width: 80px;
+  }
+
+  body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
