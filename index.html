@@ -6,6 +6,53 @@
   <meta name="description" content="Bikky The Explorer is a personal blog focused on motorcycle adventures, travel tips, and bike maintenance advice." />
   <title>Bikky The Explorer | Home</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      color: #333;
+    }
+
+    .close-btn {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+
+    .why-heading {
+      margin-top: 0;
+      color: #222;
+      text-align: center;
+    }
+
+    .modal-content ul li {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,6 +64,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="blogs.html">Blogs</a>
+        <a href="social.html">Social</a>
       </nav>
 
       <div class="header-right">
@@ -35,10 +83,12 @@
 
   <main class="post-grid">
     <section class="blog-post">
-      <h3><a href="posts/post1.html">Why I Started This Blog</a></h3>
+      <h3><a href="javascript:void(0);" onclick="openModal()">Why I Started This Blog</a></h3>
       <p class="meta">Posted on April 15th, 2025</p>
-      <p>Ever since I was a child, I’ve been fascinated by machines and motorcycles. I used to take apart my toys just to understand how they worked — that curiosity soon turned into an unwavering passion for bikes and travel. Over the years, I realized I wanted to share this passion with others.</p>
-      <p>That’s how "Bikky the Explorer" was born — a space where I teach people how to maintain their bikes, share practical travel tips, and help fellow explorers save time and money on their journeys. This blog is a reflection of what I love to learn and what I’m excited to share with you.</p>
+      <p> Starting this blog was a way to share my journey beyond just photos and videos.
+It’s a space where stories meet insights — from roads taken to lessons learned.
+Whether you're here for inspiration or planning your own ride, welcome aboard</p>
+      <p>"Click above to know about my journey..."</p>
     </section>
 
     <section class="blog-post">
@@ -48,8 +98,54 @@
     </section>
   </main>
 
+  <!-- MODAL CONTENT -->
+  <div id="whyModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 class="why-heading">Why I Started This Blog</h2>
+      <p>
+        For three years, I worked the night shift—alone in a silent office while the city slept. Most people saw it as “just a back-office job,” but to me, it was a silent battlefield of growth, patience, and reflection. I wasn’t just handling data; I was silently navigating life, juggling responsibilities, learning new skills, and figuring out who I wanted to become.
+      </p>
+      <p>
+        In that solitude, a voice inside me grew louder—the urge to <strong>express</strong>, <strong>create</strong>, and <strong>connect</strong>. This blog is born from that voice.
+      </p>
+      <p>
+        I’ve always been a curious mix: a data analyst by profession, a biker by passion, a guitar player when I’m lost in thought, and a content creator when my soul needs a stage. From riding my Royal Enfield “Megh” through unexplored roads to exploring the world of anime, novels, music, and tech—there’s a lot in my life that deserves a space of its own.
+      </p>
+      <p>This blog is my way to:</p>
+      <ul>
+        <li>✍️ <strong>Tell my story</strong>—not just to be heard, but to connect with those walking a similar path.</li>
+        <li>🔧 <strong>Share real insights</strong> from my career shift, riding adventures, and lessons learned the hard way.</li>
+        <li>🎥 <strong>Document my journey</strong> from a 9–5 survivor to someone building a creative life with purpose.</li>
+        <li>🌍 <strong>Inspire others</strong> who feel stuck, alone, or unsure if they’re “meant for more.”</li>
+      </ul>
+      <p>
+        If you’re someone who’s juggling work, dreams, and the search for meaning—welcome. You’re not alone. This blog is for you.
+      </p>
+    </div>
+  </div>
+
   <footer>
     <p>&copy; 2025 "BikkyTheExplorer" | <a href="mailto:explorewithbikky@gmail.com">Contact</a></p>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function openModal() {
+      document.getElementById("whyModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("whyModal").style.display = "none";
+    }
+
+    // Optional: Close modal on outside click
+    window.onclick = function(event) {
+      const modal = document.getElementById("whyModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
 </body>
 </html>
