@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Connect with Bikky The Explorer and share your thoughts or questions through the social page." />
-  <title>Social | Bikky The Explorer</title>
+  <title>My Vlogs & Blog Videos</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header>
     <div class="header-container">
-      <h1 class="header-left">Bikky The Explorer</h1>
-      <p class="tagline">"TRAVEL ENTHUSIAST"</p>
+      <div class="header-left">Bikky The Explorer<br><span class="tagline">"TRAVEL ENTHUSIAST"</span></div>
 
       <nav class="header-center">
         <a href="index.html">Home</a>
@@ -23,36 +19,80 @@
       </nav>
 
       <div class="header-right">
-        <img src="images/btelogo.png" alt="Bikky The Explorer Logo" class="site-logo" />
+        <img src="images/btelogo.png" alt="Logo" class="site-logo" />
       </div>
     </div>
   </header>
+<main>
+  <!-- Subscription Section -->
+  <section class="newsletter-container" style="background-color: #fff7e0; padding: 1.5rem; border-radius: 12px; margin: 2rem auto; max-width: 500px; text-align: center;">
+    <h3 style="margin-bottom: 0.5rem;">📰 Join My Rider's Journal</h3>
+    <p style="margin-bottom: 1rem;">Get weekly tips, ride plans, gear reviews, and more straight to your inbox!</p>
+    <form id="subscribe-form" style="display: flex; gap: 0.5rem; justify-content: center;">
+      <input type="email" placeholder="Your email address" required style="padding: 0.5rem; flex: 1; max-width: 250px; border: 1px solid #ccc; border-radius: 6px;">
+      <button type="submit" style="background-color: orange; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Subscribe</button>
+    </form>
+  </section>
 
-  <main>
-    <!-- Social Section -->
-    <section class="social-container">
-      <div class="social-header">
-        <h2>Drop Your Query</h2>
-        <p>Feel free to ask any questions or share your thoughts with us. Our community is here to help!</p>
+  <!-- Social Section -->
+  <section class="social-container">
+    <div class="social-header">
+      <h2>Drop Your Query</h2>
+      <p>Feel free to ask any questions or share your thoughts with us. Our community is here to help!</p>
+    </div>
+
+    <form id="query-form">
+      <textarea id="query-input" placeholder="Type your query here..." required></textarea>
+      <button type="submit">Submit Query</button>
+    </form>
+
+    <div id="queries-container">
+      <h3>All Queries</h3>
+      <div id="queries-list"></div>
+    </div>
+
+    <!-- Sample Public Comments -->
+    <div id="public-comments">
+      <h3>💬 Public Comments</h3>
+
+      <div class="comment-box">
+        <p><strong>Ravi Rides:</strong> Loved your Hunter 350 review! Planning to buy one soon. 😊</p>
+        <p class="comment-date">Posted on May 13, 2025</p>
+        <button class="reply-btn">Reply</button>
+        <div class="reply-section" style="display:none;">
+          <textarea class="reply-input" placeholder="Write a reply..."></textarea>
+          <button class="submit-reply-btn">Submit Reply</button>
+          <div class="reply-output">
+            <p>🗨️ Thanks, Ravi! It's a great city bike — just make sure to take a few test rides before deciding.</p>
+          </div>
+        </div>
       </div>
 
-      <form id="query-form">
-        <textarea id="query-input" placeholder="Type your query here..." required></textarea>
-        <button type="submit">Submit Query</button>
-      </form>
-
-      <div id="queries-container">
-        <h3>All Queries</h3>
-        <div id="queries-list"></div>
+      <div class="comment-box">
+        <p><strong>SpeedMonk:</strong> You should also test it on mountain roads for better insights!</p>
+        <p class="comment-date">Posted on May 14, 2025</p>
+        <button class="reply-btn">Reply</button>
+        <div class="reply-section" style="display:none;">
+          <textarea class="reply-input" placeholder="Write a reply..."></textarea>
+          <button class="submit-reply-btn">Submit Reply</button>
+          <div class="reply-output">
+            <p>🗨️ Great suggestion! Planning a Nandi Hills ride this weekend — stay tuned for the vlog!</p>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 "BikkyTheExplorer" | <a href="mailto:explorewithbikky@gmail.com">Contact</a></p>
-  </footer>
-
-  <script src="social.js"></script>
-</body>
-
-</html>
+      <div class="comment-box">
+        <p><strong>Vikas:</strong> Suspension seems stiff on bad roads, same issue with mine.</p>
+        <p class="comment-date">Posted on May 15, 2025</p>
+        <button class="reply-btn">Reply</button>
+        <div class="reply-section" style="display:none;">
+          <textarea class="reply-input" placeholder="Write a reply..."></textarea>
+          <button class="submit-reply-btn">Submit Reply</button>
+          <div class="reply-output">
+            <p>🗨️ Yes, preload adjustment helps a bit. Also check tyre pressure — it makes a big difference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
