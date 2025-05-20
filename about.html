@@ -5,42 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Example modal styling; you can move these rules to style.css */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    /* Optional: Style for the modal trigger */
+    .about-modal-trigger {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .about-modal-trigger a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #007BFF;
+      cursor: pointer;
+    }
+    /* Social icons styling example (if not defined in style.css) */
+    .social-connect {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .social-icons {
+      font-size: 2rem;
+      gap: 1.5rem;
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .social-icons a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-  <div class="header-container">
-    <div class="header-left">Bikky The Explorer<br><span class="tagline">"TRAVEL ENTHUSIAST"</span></div>
-    <nav class="header-center">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="social.html">Social</a>
-    </nav>
+  <header>
+    <div class="header-container">
+      <div class="header-left">
+        Bikky The Explorer<br>
+        <span class="tagline">"TRAVEL ENTHUSIAST"</span>
+      </div>
+      <nav class="header-center">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="social.html">Social</a>
+      </nav>
+      <div class="header-right">
+        <img src="images/btelogo.png" alt="Logo" class="site-logo" />
+      </div>
+    </div>
+  </header>
 
-    <div class="header-right">
-      <img src="images/btelogo.png" alt="Logo" class="site-logo" />
+  <main class="about-container">
+    <h1 class="about-heading">WELCOME HOME, FELLOW EXPLORER!</h1>
+    <div class="about-wrapper">
+      <div class="about-img">
+        <img src="images/biks.jpg" alt="Bikram Rawal Photo" />
+      </div>
+      <div class="about-text">
+        <p>Hi, I’m Bikram Rawal — the rider behind “Bikky The Explorer.” I'm passionate about bikes, travel, and simplifying the journey for fellow explorers. Through this blog, I aim to share real, hands-on tips and experiences to help you make the most of your motorcycle adventures.</p>
+        <p>From basic bike maintenance to choosing the right accessories, I cover practical advice that helps you ride smarter, save money, and avoid common mistakes. If you’re someone who wants to travel more with fewer expenses, you’ll find plenty of helpful guides here.</p>
+        <p>I also share vlogs and road reviews of my Royal Enfield Hunter 350, plus DIY tutorials for modifications and upgrades — all based on real-life use.</p>
+        <p>When I’m not on the road, I enjoy playing guitar, staying fit, reading, and keeping up with current events — because a well-rounded rider makes the best explorer.</p>
+        <p>Thanks for stopping by! I hope you find something useful and inspiring here. Ride safe — and stay tuned, more updates are on the way.</p>
+      </div>
+    </div>
+    
+    <!-- Modal trigger placed just above social media links -->
+    <div class="about-modal-trigger">
+      <a href="#" onclick="openModal()">Why I Started This Blog</a>
+    </div>
+  
+    <!-- MODAL CONTENT -->
+    <div id="whyModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 class="why-heading">Why I Started This Blog</h2>
+        <p>
+          For three years, I worked the night shift—alone in a silent office while the city slept. Most people saw it as “just a back-office job,” but to me, it was a silent battlefield of growth, patience, and reflection. I wasn’t just handling data; I was silently navigating life, juggling responsibilities, learning new skills, and figuring out who I wanted to become.
+        </p>
+        <p>
+          In that solitude, a voice inside me grew louder—the urge to <strong>express</strong>, <strong>create</strong>, and <strong>connect</strong>. This blog is born from that voice.
+        </p>
+        <p>
+          I’ve always been a curious mix: a data analyst by profession, a biker by passion, a guitar player when I’m lost in thought, and a content creator when my soul needs a stage. From riding my Royal Enfield “Megh” through unexplored roads to exploring the world of anime, novels, music, and tech—there’s a lot in my life that deserves a space of its own.
+        </p>
+        <p>This blog is my way to:</p>
+        <ul>
+          <li>✍️ <strong>Tell my story</strong>—not just to be heard, but to connect with those walking a similar path.</li>
+          <li>🔧 <strong>Share real insights</strong> from my career shift, riding adventures, and lessons learned the hard way.</li>
+          <li>🎥 <strong>Document my journey</strong> from a 9–5 survivor to someone building a creative life with purpose.</li>
+          <li>🌍 <strong>Inspire others</strong> who feel stuck, alone, or unsure if they’re “meant for more.”</li>
+        </ul>
+        <p>
+          If you’re someone who’s juggling work, dreams, and the search for meaning—welcome. You’re not alone. This blog is for you.
+        </p>
+      </div>
+    </div>
+  
+  </main>
+
+  <div class="social-connect">
+    <h3>📲 Connect With Me</h3>
+    <p>Follow my journey and stay updated through these platforms:</p>
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@bikkytheexplorer1320" target="_blank" title="YouTube" style="color: #FF0000;">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com/yourprofile" target="_blank" title="Instagram" style="color: #C13584;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook" style="color: #1877F2;">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="mailto:explorewithbikky@gmail.com" title="Email Me" style="color: #333;">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
   </div>
-</header>
-<main class="about-container">
-  <h1 class="about-heading">WELCOME HOME, FELLOW EXPLORER!</h1>
-
-  <div class="about-wrapper">
-    <div class="about-img">
-      <img src="images/biks.jpg" alt="Bikram Rawal Photo" />
-    </div>
-
-    <div class="about-text">
-      <p>Hi, I’m Bikram Rawal — a travel enthusiast, biking lover, and the face behind “Bikky The Explorer.” I'm here to share practical bike maintenance tips, real travel experiences, and budget-friendly travel guides to help you explore more and spend less.</p>
-      <p>This personal blog is dedicated to bike lovers and learners — especially those who want to understand how to maintain their motorcycles, save time, and avoid unnecessary expenses. I’ll also be sharing travel vlogs and practical tips as I explore new places.</p>
-      <p>My interests include playing guitar, fitness, reading books, traveling, and keeping up with current affairs.</p>
-      <p>Thank you for visiting and taking the time to read my blog. Stay tuned — exciting content is on the way!</p>
-    </div>
-  </div>
-</main>
 
   <footer>
     <p>&copy; 2025 "BikkyTheExplorer"</p>
   </footer>
+
+  <script>
+    function openModal() {
+      document.getElementById("whyModal").style.display = "block";
+    }
+    
+    function closeModal() {
+      document.getElementById("whyModal").style.display = "none";
+    }
+    
+    // Close modal if user clicks outside of modal content
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("whyModal")) {
+        closeModal();
+      }
+    }
+  </script>
 </body>
 </html>
