@@ -7,7 +7,11 @@
   <title>Bikky The Explorer | Home</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Modal Styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
     .modal {
       display: none;
       position: fixed;
@@ -29,8 +33,6 @@
       max-width: 850px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       color: #333;
-      font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
     }
 
     .close-btn {
@@ -47,9 +49,7 @@
 
     .why-heading {
       margin-top: 0;
-      color: #222;
       text-align: center;
-      font-size: 26px;
     }
 
     .modal-content ul li {
@@ -63,6 +63,73 @@
 
     .blog-post h3 a:hover {
       color: #0077cc;
+    }
+
+    .featured-image-section {
+      background-color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .featured-image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* NEW: Background image for main content area */
+    .main-content-with-bg {
+      background-image: url('images/megh-bte-wallpaper.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    .main-content-with-bg h3,
+    .main-content-with-bg p,
+    .main-content-with-bg li,
+    .main-content-with-bg strong {
+      color: #1a0202;
+      text-shadow: 0 1px 3px rgba(246, 244, 244, 0.8);
+    }
+
+    .interest-box input[type="email"] {
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .interest-box button {
+      padding: 8px 12px;
+      background-color: #0077cc;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .interest-box button:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #eee;
+    }
+
+    footer a {
+      color: #eee;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -88,32 +155,32 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h2>WELCOME HOME FELLOW, EXPLORER!</h2>
+      <h2>Your Journey Begins Here</h2>
       <p>Explore road-tested travel tips, rider gear reviews, and stories that inspire both new and seasoned bikers.</p>
     </div>
   </section>
 
-  <!-- 📅 Upcoming Events Section -->
-<section class="blog-post">
-  <h3>Upcoming Biker Events & Meetups</h3>
-  <p>Want to ride with a tribe? Don’t miss these upcoming events:</p>
-  <ul>
-    <li>🏍️ <strong>India Bike Week – Goa</strong>: Dec 2025</li>
-    <li>⛰️ <strong>Himalayan Adventure Rally</strong>: July 2025</li>
-    <li>🌄 <strong>Western Ghats Monsoon Trail</strong>: August 2025</li>
-  </ul>
+  <!-- Main Content with Background -->
+  <div class="main-content-with-bg">
+    <!-- 📅   Upcoming Events -->
+    <section class="blog-post">
+      <h3>Upcoming Biker Events & Meetups</h3>
+      <p>Want to ride with a tribe? Don’t miss these upcoming events:</p>
+      <ul>
+        <li>🏍️ <strong>India Bike Week – Goa</strong>: Dec 2025</li>
+        <li>⛰️ <strong>Himalayan Adventure Rally</strong>: July 2025</li>
+        <li>🌄 <strong>Western Ghats Monsoon Trail</strong>: August 2025</li>
+      </ul>
 
-  <!-- Email Interest Form -->
-  <div class="interest-box">
-    <p><strong>Drop your email if you're interested in these events:</strong></p>
-    <form onsubmit="event.preventDefault(); alert('Thank you for showing interest!');">
-      <input type="email" placeholder="Your Email Address" required />
-      <button type="submit">Notify Me</button>
-    </form>
-  </div>
-</section>
+      <div class="interest-box">
+        <p><strong>Drop your email if you're interested in these events:</strong></p>
+        <form onsubmit="event.preventDefault(); alert('Thank you for showing interest!');">
+          <input type="email" placeholder="Your Email Address" required />
+          <button type="submit">Notify Me</button>
+        </form>
+      </div>
+    </section>
 
-  <main class="post-grid">
     <!-- Blog Post 1 -->
     <section class="blog-post">
       <h3><a href="javascript:void(0);" onclick="openModal()">How This Blog Helps Riders & Travelers Like You</a></h3>
@@ -129,22 +196,20 @@
       <p>Each destination in this list tells a story — from majestic hill curves to hidden coastal gems. These places are more than scenic; they’re spiritual stops for every true rider.</p>
     </section>
 
-    <!-- Riding Gear Guide Section -->
+    <!-- Blog Post 3 -->
     <section class="blog-post">
       <h3><a href="javascript:void(0);" onclick="openGearModal()">Beginner's Riding Gear Guide</a></h3>
       <p class="meta">Posted on April 15th, 2025</p>
       <p>Just starting your journey as a biker? Discover the essential gear every new rider must own — explained with safety tips, budget picks, and expert insight.</p>
       <p>"Click above to gear up smart and safe."</p>
     </section>
-  </main>
+  </div>
 
-      
-  <!-- General Blog Modal -->
+  <!-- Modals -->
   <div id="whyModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h2 class="why-heading">How This Blog Helps Riders & Travelers Like You</h2>
-      <p>This blog is crafted for road-lovers with a purpose. From turning your passion into a plan to understanding what truly matters on two wheels, here's how we serve you:</p>
       <ul>
         <li>🧭 <strong>Route Planning:</strong> Avoid mainstream chaos. Ride smart with curated, rider-tested routes.</li>
         <li>🛠️ <strong>Gear Reviews:</strong> Real feedback from thousands of kilometers — what holds, what folds.</li>
@@ -155,34 +220,29 @@
     </div>
   </div>
 
-  <!-- Riding Gear Modal -->
   <div id="gearModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeGearModal()">&times;</span>
       <h2 class="why-heading">Beginner’s Guide to Essential Riding Gear</h2>
-      <p>Choosing the right gear is not just about style — it’s about survival. This guide helps new bikers avoid rookie mistakes with practical, experience-backed advice.</p>
       <ul>
-        <li>🪖 <strong>Helmet:</strong> Always go for ISI/DOT/ECE certified. Modular or full-face helmets offer maximum protection. Brands to consider: Axor, SMK, Arai, Shoei.</li>
-        <li>🧥 <strong>Jacket:</strong> Invest in CE-certified armors (elbows, shoulders, back). Start with mesh for India’s climate.</li>
-        <li>🧤 <strong>Gloves:</strong> Protect your hands! Prioritize knuckle protection and palm sliders. Full gauntlets preferred for highways.</li>
-        <li>👖 <strong>Pants:</strong> Denim won’t save your knees. Use riding pants with knee and hip protection. Textile over leather for tropical rides.</li>
-        <li>🥾 <strong>Boots:</strong> Ankle coverage is a must. Anti-slip soles, reinforced toe caps, and waterproofing are ideal for all terrains.</li>
+        <li>🪖 <strong>Helmet:</strong> Always go for ISI/DOT/ECE certified.</li>
+        <li>🧥 <strong>Jacket:</strong> Invest in CE-certified armors.</li>
+        <li>🧤 <strong>Gloves:</strong> Prioritize knuckle protection.</li>
+        <li>👖 <strong>Pants:</strong> Use riding pants with proper protection.</li>
+        <li>🥾 <strong>Boots:</strong> Ankle coverage is a must.</li>
       </ul>
-      <p><strong>Quick Tips:</strong></p>
       <ul>
-        <li>🛡️ Budget builds: Start with entry-level combos before upgrading.</li>
-        <li>📏 Fit over looks: A snug fit saves bones. Always try before you buy.</li>
-        <li>🌧️ Don’t skip rain gear: Lightweight overalls can save your ride (and phone).</li>
+        <li>🛡️ Budget builds: Start simple.</li>
+        <li>📏 Fit over looks: A snug fit saves bones.</li>
+        <li>🌧️ Rain gear: Always carry a rain set.</li>
       </ul>
-      <p>Whether you're riding to work or Leh-Ladakh, gearing up right can be the difference between adventure and accident. Ride prepared.</p>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 "BikkyTheExplorer" | <a href="mailto:explorewithbikky@gmail.com">Contact</a></p>
+    <p>&copy; 2025 "BikkyTheExplorer" | <a href="mailto:explorewithbikky@gmail.com">Contact: Biksexplores@gmail.com</a></p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     function openModal() {
       document.getElementById("whyModal").style.display = "block";
@@ -200,7 +260,6 @@
       document.getElementById("gearModal").style.display = "none";
     }
 
-    // Close modals on outside click
     window.onclick = function(event) {
       const modal1 = document.getElementById("whyModal");
       const modal2 = document.getElementById("gearModal");
